@@ -1,4 +1,4 @@
-import templateFunction from "./template/news-card.hbs";
+import templateFunction from "../template/news-card.hbs";
 const refs = {
   grid: document.querySelector(".news-grid"),
   formEl: document.querySelector("#search-form"),
