@@ -1,0 +1,120 @@
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+p {
+  color: #11998e;
+}
+
+.new-grid {
+  display: flex;
+  justify-content: space-around;
+}
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  background-color: #f7f7f7;
+  color: #303030;
+}
+.header {
+  text-align: center;
+  font-size: 28px;
+  padding-bottom: 40px;
+}
+
+.form-list {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 0 15px;
+}
+.form-list > li:last-child {
+  display: flex;
+}
+.submit-btn {
+  font-size: 16px;
+  font-weight: bold;
+  width: 140px;
+  height: 40px;
+  color: #38ef7d;
+  background-color: #ffffff;
+  border: 1px solid;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.submit-btn:active,
+.submit-btn:focus {
+  transition: 250ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition-property: border, outline;
+  outline: lightcoral;
+}
+.form__field {
+  font-family: inherit;
+  width: 100%;
+  border: 0;
+  border-bottom: 2px solid #9b9b9b;
+  outline: 0;
+  font-size: 1.3rem;
+  padding: 7px 0;
+  background: transparent;
+  transition: border-color 0.2s;
+  margin-right: 15px;
+}
+
+.form__field:focus {
+  padding-bottom: 6px;
+  border-width: 3px;
+  border-image: linear-gradient(to right, #11998e, #38ef7d);
+  border-image-slice: 1;
+}
+.select {
+  width: 190px;
+  height: 30px;
+  font-size: 20px;
+}
+
+.news-grid {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+.news-grid > li {
+  background-color: #ffffff;
+  width: calc((100% - 60px) / 3);
+  border: 1px solid #eeeeee;
+  border-radius: 4px;
+  margin-bottom: 20px;
+}
+.news-grid > li:hover {
+  box-shadow: 1px 4px 6px rgba(0, 0, 0, 0.16), 0px 4px 4px rgba(0, 0, 0, 0.06),
+    0px 1px 1px rgba(0, 0, 0, 0.12);
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1) box-shadow,
+    250ms cubic-bezier(0.4, 0, 0.2, 1) -webkit-box-shadow;
+}
+.news-grid img {
+  width: 100%;
+}
+
+.search {
+  padding-bottom: 60px;
+}
+.grid-card-container {
+  padding: 20px;
+}
+
+.description {
+  font-size: 18px;
+  color: #303030;
+}
+.grid-author {
+  color: #303030;
+}
+.grid-title {
+  font-size: 25px;
+}
+.grid-title a {
+  text-decoration: none;
+  color: #ff6c00;
+}
