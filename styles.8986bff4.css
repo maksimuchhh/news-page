@@ -116,6 +116,12 @@ body {
   text-decoration: none;
   color: #ff6c00;
 }
+.sorry {
+  margin: 0px;
+  margin-right: 110px;
+  color: tomato;
+  text-align: right;
+}
 @media screen and (max-width: 1000px) {
   .news-grid {
     display: block;
@@ -123,11 +129,16 @@ body {
   .news-grid > li {
     width: 100%;
   }
+
   .form-list {
     display: block;
   }
   .form-list li:last-child {
-    margin-top: 20px;
+    margin-top: 40px;
+  }
+  .sorry {
+    text-align: left;
+    margin-left: 15px;
   }
 }
 
