@@ -18,7 +18,7 @@ function searchArticle(evt) {
   refs.grid.innerHTML = "";
   evt.preventDefault();
   fetch(
-    `https://sheltered-meadow-52251.herokuapp.com/everything?q=${searchValue}&language=${lang}&sortBy=${sort}&pageSize=50&apiKey=b911240c4e294ab1ad8d5fe72cb8a374`
+    `https://sheltered-meadow-52251.herokuapp.com/everything?qInTitle=${searchValue}&language=${lang}&sortBy=${sort}&pageSize=50&apiKey=b911240c4e294ab1ad8d5fe72cb8a374`
   )
     .then((response) => response.json())
     .then((data) => {
