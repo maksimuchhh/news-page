@@ -7,15 +7,12 @@ p {
   color: #11998e;
 }
 
-.new-grid {
-  display: flex;
-  justify-content: space-around;
-}
 body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   background-color: #f7f7f7;
   color: #303030;
+  overflow-x: hidden;
 }
 .header {
   text-align: center;
@@ -80,6 +77,7 @@ body {
   justify-content: space-around;
   flex-wrap: wrap;
 }
+
 .news-grid > li {
   background-color: #ffffff;
   width: calc((100% - 60px) / 3);
@@ -117,6 +115,20 @@ body {
 .grid-title a {
   text-decoration: none;
   color: #ff6c00;
+}
+@media screen and (max-width: 1000px) {
+  .news-grid {
+    display: block;
+  }
+  .news-grid > li {
+    width: 100%;
+  }
+  .form-list {
+    display: block;
+  }
+  .form-list li:last-child {
+    margin-top: 20px;
+  }
 }
 
 
