@@ -2147,6 +2147,34 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var templateFunction = _handlebars.default.template({
   "1": function _(container, depth0, helpers, partials, data) {
     var stack1,
+        lookupProperty = container.lookupProperty || function (parent, propertyName) {
+      if (Object.prototype.hasOwnProperty.call(parent, propertyName)) {
+        return parent[propertyName];
+      }
+
+      return undefined;
+    };
+
+    return (stack1 = lookupProperty(helpers, "each").call(depth0 != null ? depth0 : container.nullContext || {}, depth0 != null ? lookupProperty(depth0, "articles") : depth0, {
+      "name": "each",
+      "hash": {},
+      "fn": container.program(2, data, 0),
+      "inverse": container.noop,
+      "data": data,
+      "loc": {
+        "start": {
+          "line": 2,
+          "column": 0
+        },
+        "end": {
+          "line": 15,
+          "column": 9
+        }
+      }
+    })) != null ? stack1 : "";
+  },
+  "2": function _(container, depth0, helpers, partials, data) {
+    var stack1,
         alias1 = container.lambda,
         alias2 = container.escapeExpression,
         lookupProperty = container.lookupProperty || function (parent, propertyName) {
@@ -2160,22 +2188,22 @@ var templateFunction = _handlebars.default.template({
     return "<li class=\"grid-card\">\r\n    <div class=\"grid-card-container\">\r\n" + ((stack1 = lookupProperty(helpers, "if").call(depth0 != null ? depth0 : container.nullContext || {}, depth0 != null ? lookupProperty(depth0, "author") : depth0, {
       "name": "if",
       "hash": {},
-      "fn": container.program(2, data, 0),
-      "inverse": container.program(4, data, 0),
+      "fn": container.program(3, data, 0),
+      "inverse": container.program(5, data, 0),
       "data": data,
       "loc": {
         "start": {
-          "line": 4,
+          "line": 5,
           "column": 8
         },
         "end": {
-          "line": 8,
+          "line": 9,
           "column": 15
         }
       }
     })) != null ? stack1 : "") + "        <img class=\"grid-image\" src=\"" + alias2(alias1(depth0 != null ? lookupProperty(depth0, "urlToImage") : depth0, depth0)) + "\" alt=\"\">\r\n        <h2 class=\"grid-title\"><a href=\"" + alias2(alias1(depth0 != null ? lookupProperty(depth0, "url") : depth0, depth0)) + "\">" + alias2(alias1(depth0 != null ? lookupProperty(depth0, "title") : depth0, depth0)) + "</a></h2>\r\n        <p class=\"description\">Description: " + alias2(alias1(depth0 != null ? lookupProperty(depth0, "description") : depth0, depth0)) + "</p>\r\n    </div>\r\n</li>\r\n";
   },
-  "2": function _(container, depth0, helpers, partials, data) {
+  "3": function _(container, depth0, helpers, partials, data) {
     var lookupProperty = container.lookupProperty || function (parent, propertyName) {
       if (Object.prototype.hasOwnProperty.call(parent, propertyName)) {
         return parent[propertyName];
@@ -2186,8 +2214,11 @@ var templateFunction = _handlebars.default.template({
 
     return "        <p class=\"grid-author\">Author: " + container.escapeExpression(container.lambda(depth0 != null ? lookupProperty(depth0, "author") : depth0, depth0)) + "</p>\r\n";
   },
-  "4": function _(container, depth0, helpers, partials, data) {
+  "5": function _(container, depth0, helpers, partials, data) {
     return "        <p class=\"grid-author\">Author: Unknown</p>\r\n";
+  },
+  "7": function _(container, depth0, helpers, partials, data) {
+    return "<h2>Ничего не найдено!</h2>\r\n";
   },
   "compiler": [8, ">= 4.3.0"],
   "main": function main(container, depth0, helpers, partials, data) {
@@ -2200,11 +2231,11 @@ var templateFunction = _handlebars.default.template({
       return undefined;
     };
 
-    return (stack1 = lookupProperty(helpers, "each").call(depth0 != null ? depth0 : container.nullContext || {}, depth0 != null ? lookupProperty(depth0, "articles") : depth0, {
-      "name": "each",
+    return (stack1 = lookupProperty(helpers, "if").call(depth0 != null ? depth0 : container.nullContext || {}, depth0 != null ? lookupProperty(depth0, "totalResults") : depth0, {
+      "name": "if",
       "hash": {},
       "fn": container.program(1, data, 0),
-      "inverse": container.noop,
+      "inverse": container.program(7, data, 0),
       "data": data,
       "loc": {
         "start": {
@@ -2212,8 +2243,8 @@ var templateFunction = _handlebars.default.template({
           "column": 0
         },
         "end": {
-          "line": 14,
-          "column": 9
+          "line": 18,
+          "column": 7
         }
       }
     })) != null ? stack1 : "";
@@ -2247,7 +2278,7 @@ function searchArticle(evt) {
   searchValue = refs.searchInput.value;
   refs.grid.innerHTML = "";
   evt.preventDefault();
-  fetch("https://newsapi.org/v2/everything?q=".concat(searchValue, "&language=").concat(lang, "&sortBy=").concat(sort, "&pageSize=50&apiKey=b911240c4e294ab1ad8d5fe72cb8a374")).then(function (response) {
+  fetch("https://sheltered-meadow-52251.herokuapp.com/everything?q=".concat(searchValue, "&language=").concat(lang, "&sortBy=").concat(sort, "&pageSize=50&apiKey=b911240c4e294ab1ad8d5fe72cb8a374")).then(function (response) {
     return response.json();
   }).then(function (data) {
     console.log(data);
@@ -2282,7 +2313,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "11569" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "2546" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

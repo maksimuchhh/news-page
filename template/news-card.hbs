@@ -1,3 +1,4 @@
+{{#if totalResults}}
 {{#each articles}}
 <li class="grid-card">
     <div class="grid-card-container">
@@ -12,3 +13,6 @@
     </div>
 </li>
 {{/each}}
+{{else}}
+<h2>Ничего не найдено!</h2>
+{{/if}}
