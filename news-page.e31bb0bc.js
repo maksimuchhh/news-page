@@ -2167,7 +2167,7 @@ var templateFunction = _handlebars.default.template({
           "column": 0
         },
         "end": {
-          "line": 15,
+          "line": 21,
           "column": 9
         }
       }
@@ -2175,8 +2175,9 @@ var templateFunction = _handlebars.default.template({
   },
   "2": function _(container, depth0, helpers, partials, data) {
     var stack1,
-        alias1 = container.lambda,
-        alias2 = container.escapeExpression,
+        alias1 = depth0 != null ? depth0 : container.nullContext || {},
+        alias2 = container.lambda,
+        alias3 = container.escapeExpression,
         lookupProperty = container.lookupProperty || function (parent, propertyName) {
       if (Object.prototype.hasOwnProperty.call(parent, propertyName)) {
         return parent[propertyName];
@@ -2185,7 +2186,7 @@ var templateFunction = _handlebars.default.template({
       return undefined;
     };
 
-    return "<li class=\"grid-card\">\r\n    <div class=\"grid-card-container\">\r\n" + ((stack1 = lookupProperty(helpers, "if").call(depth0 != null ? depth0 : container.nullContext || {}, depth0 != null ? lookupProperty(depth0, "author") : depth0, {
+    return "<li class=\"grid-card\">\r\n    <div class=\"grid-card-container\">\r\n" + ((stack1 = lookupProperty(helpers, "if").call(alias1, depth0 != null ? lookupProperty(depth0, "author") : depth0, {
       "name": "if",
       "hash": {},
       "fn": container.program(3, data, 0),
@@ -2201,7 +2202,23 @@ var templateFunction = _handlebars.default.template({
           "column": 15
         }
       }
-    })) != null ? stack1 : "") + "        <img class=\"grid-image\" src=\"" + alias2(alias1(depth0 != null ? lookupProperty(depth0, "urlToImage") : depth0, depth0)) + "\" alt=\"\">\r\n        <h2 class=\"grid-title\"><a href=\"" + alias2(alias1(depth0 != null ? lookupProperty(depth0, "url") : depth0, depth0)) + "\">" + alias2(alias1(depth0 != null ? lookupProperty(depth0, "title") : depth0, depth0)) + "</a></h2>\r\n        <p class=\"description\">Description: " + alias2(alias1(depth0 != null ? lookupProperty(depth0, "description") : depth0, depth0)) + "</p>\r\n    </div>\r\n</li>\r\n";
+    })) != null ? stack1 : "") + ((stack1 = lookupProperty(helpers, "if").call(alias1, depth0 != null ? lookupProperty(depth0, "urlToImage") : depth0, {
+      "name": "if",
+      "hash": {},
+      "fn": container.program(7, data, 0),
+      "inverse": container.program(9, data, 0),
+      "data": data,
+      "loc": {
+        "start": {
+          "line": 10,
+          "column": 8
+        },
+        "end": {
+          "line": 16,
+          "column": 15
+        }
+      }
+    })) != null ? stack1 : "") + "        <h2 class=\"grid-title\"><a href=\"" + alias3(alias2(depth0 != null ? lookupProperty(depth0, "url") : depth0, depth0)) + "\">" + alias3(alias2(depth0 != null ? lookupProperty(depth0, "title") : depth0, depth0)) + "</a></h2>\r\n        <p class=\"description\">Description: " + alias3(alias2(depth0 != null ? lookupProperty(depth0, "description") : depth0, depth0)) + "</p>\r\n    </div>\r\n</li>\r\n";
   },
   "3": function _(container, depth0, helpers, partials, data) {
     var lookupProperty = container.lookupProperty || function (parent, propertyName) {
@@ -2218,6 +2235,20 @@ var templateFunction = _handlebars.default.template({
     return "        <p class=\"grid-author\">Author: Unknown</p>\r\n";
   },
   "7": function _(container, depth0, helpers, partials, data) {
+    var lookupProperty = container.lookupProperty || function (parent, propertyName) {
+      if (Object.prototype.hasOwnProperty.call(parent, propertyName)) {
+        return parent[propertyName];
+      }
+
+      return undefined;
+    };
+
+    return "        <img class=\"grid-image\" src=\"" + container.escapeExpression(container.lambda(depth0 != null ? lookupProperty(depth0, "urlToImage") : depth0, depth0)) + "\" alt=\"Title photo\">\r\n";
+  },
+  "9": function _(container, depth0, helpers, partials, data) {
+    return "        <img class=\"grid-image\"\r\n            src=\"https://scontent.fiev20-1.fna.fbcdn.net/v/t1.0-9/65173958_2384653394889200_6704325493857976320_o.png?_nc_cat=101&ccb=2&_nc_sid=09cbfe&_nc_ohc=5hR73u8KLcwAX8Erg6O&_nc_ht=scontent.fiev20-1.fna&oh=145c0bc5aa816d7db628d679fc5aa939&oe=5FD885CF\"\r\n            alt=\"Title photo\">\r\n";
+  },
+  "11": function _(container, depth0, helpers, partials, data) {
     return "<h2>Ничего не найдено!</h2>\r\n";
   },
   "compiler": [8, ">= 4.3.0"],
@@ -2235,7 +2266,7 @@ var templateFunction = _handlebars.default.template({
       "name": "if",
       "hash": {},
       "fn": container.program(1, data, 0),
-      "inverse": container.program(7, data, 0),
+      "inverse": container.program(11, data, 0),
       "data": data,
       "loc": {
         "start": {
@@ -2243,7 +2274,7 @@ var templateFunction = _handlebars.default.template({
           "column": 0
         },
         "end": {
-          "line": 18,
+          "line": 24,
           "column": 7
         }
       }
@@ -2313,7 +2344,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "2546" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "9601" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
