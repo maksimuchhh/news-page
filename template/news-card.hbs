@@ -7,7 +7,11 @@
         {{else}}
         <p class="grid-author">Author: Unknown</p>
         {{/if}}
-        <img class="grid-image" src="{{this.urlToImage}}" alt="">
+        {{#if this.urlToImage}}
+        <img class="grid-image" src="{{this.urlToImage}}" alt="Title photo">
+        {{else}}
+        <img class="grid-image" src="https://images.app.goo.gl/7ePxck1LgMsCjsL57" alt="Title photo">
+        {{/if}}
         <h2 class="grid-title"><a href="{{this.url}}">{{this.title}}</a></h2>
         <p class="description">Description: {{this.description}}</p>
     </div>
