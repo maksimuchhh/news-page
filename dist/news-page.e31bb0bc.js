@@ -2218,7 +2218,7 @@ var templateFunction = _handlebars.default.template({
           "column": 15
         }
       }
-    })) != null ? stack1 : "") + "        <h2 class=\"grid-title\"><a href=\"" + alias3(alias2(depth0 != null ? lookupProperty(depth0, "url") : depth0, depth0)) + "\">" + alias3(alias2(depth0 != null ? lookupProperty(depth0, "title") : depth0, depth0)) + "</a></h2>\r\n        <p class=\"description\">Description: " + alias3(alias2(depth0 != null ? lookupProperty(depth0, "description") : depth0, depth0)) + "</p>\r\n    </div>\r\n</li>\r\n";
+    })) != null ? stack1 : "") + "        <h2 class=\"grid-title\"><a href=\"" + alias3(alias2(depth0 != null ? lookupProperty(depth0, "url") : depth0, depth0)) + "\" target=\"_blank\">" + alias3(alias2(depth0 != null ? lookupProperty(depth0, "title") : depth0, depth0)) + "</a></h2>\r\n        <p class=\"description\">Description: " + alias3(alias2(depth0 != null ? lookupProperty(depth0, "description") : depth0, depth0)) + "</p>\r\n    </div>\r\n</li>\r\n";
   },
   "3": function _(container, depth0, helpers, partials, data) {
     var lookupProperty = container.lookupProperty || function (parent, propertyName) {
@@ -2344,7 +2344,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "9601" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "10965" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
